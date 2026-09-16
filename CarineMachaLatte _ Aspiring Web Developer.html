@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)file:///C:/Users/STUDENT%20USER/Desktop/Carine%20L.%20Rivas%20BSIS%202B/rivas.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CarineMachaLatte | Aspiring Web Developer</title>
+
+  <style>
+    /* =========================
+       GOOGLE FONT
+    ========================== */
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+    /* =========================
+       ROOT COLORS
+    ========================== */
+    :root {
+      --darkest: #071a13;
+      --dark: #0d2b20;
+      --green: #164b35;
+      --light-green: #5c9b76;
+      --cream: #f5ead7;
+      --latte: #c9a27e;
+      --white: #ffffff;
+      --text: #dce9e2;
+      --glass: rgba(255, 255, 255, 0.08);
+      --border: rgba(255, 255, 255, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(92, 155, 118, 0.18), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(201, 162, 126, 0.12), transparent 30%),
+        var(--darkest);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 18px 8%;
+      background: rgba(7, 26, 19, 0.8);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+      color: var(--cream);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: var(--latte);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 10px 16px;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      background: var(--green);
+      color: var(--cream);
+    }
+
+    /* =========================
+       HERO SECTION
+    ========================== */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 8% 60px;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 750px;
+      z-index: 2;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 10px 18px;
+      border: 1px solid var(--light-green);
+      border-radius: 30px;
+      color: #9dd7b5;
+      margin-bottom: 25px;
+      background: rgba(92, 155, 118, 0.08);
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 1;
+      color: var(--cream);
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--latte);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      max-width: 650px;
+      color: #b9ccc1;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 8px;
+      transition: 0.3s;
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      background: var(--latte);
+      color: var(--darkest);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px rgba(201, 162, 126, 0.2);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--light-green);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: var(--green);
+    }
+
+    /* =========================
+       FLOATING DECORATION
+    ========================== */
+
+    .coffee-circle {
+      position: absolute;
+      right: 10%;
+      top: 25%;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      border: 2px solid rgba(201, 162, 126, 0.2);
+      box-shadow:
+        0 0 80px rgba(92, 155, 118, 0.12),
+        inset 0 0 80px rgba(201, 162, 126, 0.05);
+    }
+
+    .coffee-circle::before {
+      content: "☕";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: 6rem;
+      opacity: 0.7;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================== */
+
+    section {
+      padding: 100px 8%;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: 2.8rem;
+      color: var(--cream);
+      margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+      color: var(--light-green);
+      margin-bottom: 45px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .glass-card {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      border-radius: 18px;
+      padding: 35px;
+      line-height: 1.8;
+    }
+
+    .about-highlight {
+      color: var(--latte);
+      font-weight: bold;
+    }
+
+    /* =========================
+       SKILLS
+    ========================== */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .skill {
+      background: rgba(22, 75, 53, 0.35);
+      border: 1px solid var(--border);
+      padding: 25px;
+      border-radius: 15px;
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      transform: translateY(-8px);
+      background: rgba(22, 75, 53, 0.7);
+    }
+
+    .skill h3 {
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+
+    .skill p {
+      color: #a9beb2;
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       PROJECTS
+    ========================== */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      border-radius: 18px;
+      overflow: hidden;
+      background: #0d2b20;
+      border: 1px solid var(--border);
+      transition: 0.4s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-image {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(92, 155, 118, 0.3),
+          rgba(201, 162, 126, 0.15)
+        );
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    .project-content h3 {
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+
+    .project-content p {
+      color: #a9beb2;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .project-link {
+      color: var(--latte);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* =========================
+       JOURNEY
+    ========================== */
+
+    .journey {
+      border-left: 2px solid var(--light-green);
+      padding-left: 30px;
+      display: grid;
+      gap: 30px;
+    }
+
+    .journey-item {
+      position: relative;
+    }
+
+    .journey-item::before {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background: var(--latte);
+      border-radius: 50%;
+      left: -38px;
+      top: 7px;
+    }
+
+    .journey-item h3 {
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .journey-item span {
+      color: var(--latte);
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact-box {
+      text-align: center;
+      max-width: 750px;
+      margin: auto;
+      background: linear-gradient(
+        135deg,
+        rgba(22, 75, 53, 0.7),
+        rgba(7, 26, 19, 0.9)
+      );
+      padding: 60px 30px;
+      border-radius: 25px;
+      border: 1px solid var(--border);
+    }
+
+    .contact-box p {
+      margin: 20px 0 30px;
+      color: #b9ccc1;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid var(--border);
+      color: #789083;
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       RESPONSIVE DESIGN
+    ========================== */
+
+    @media (max-width: 850px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        text-align: center;
+        justify-content: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .coffee-circle {
+        opacity: 0.15;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      nav {
+        padding: 15px 5%;
+      }
+
+      .nav-links a {
+        padding: 7px 10px;
+        font-size: 0.8rem;
+      }
+
+      section {
+        padding: 80px 7%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <nav>
+    <a href="file:///C:/Users/STUDENT%20USER/Desktop/Carine%20L.%20Rivas%20BSIS%202B/rivas.html#home" class="logo">
+      Carine<span>MachaLatte</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="file:///C:/Users/STUDENT%20USER/Desktop/Carine%20L.%20Rivas%20BSIS%202B/rivas.html#home" style="background: rgba(92, 155, 118, 0.35);">☕ Home</a></li>
+      <li><a href="file:///C:/Users/STUDENT%20USER/Desktop/Carine%20L.%20Rivas%20BSIS%202B/rivas.html#about" style="">🌿 About Latte</a></li>
+      <li><a href="file:///C:/Users/STUDENT%20USER/Desktop/Carine%20L.%20Rivas%20BSIS%202B/rivas.html#skills" style="">🛠 Skills</a></li>
+      <li><a href="file:///C:/Users/STUDENT%20USER/Desktop/Carine%20L.%20Rivas%20BSIS%202B/rivas.html#projects" style="">💻 Projects</a></li>
+      <li><a href="file:///C:/Users/STUDENT%20USER/Desktop/Carine%20L.%20Rivas%20BSIS%202B/rivas.html#journey" style="">📖 Journey</a></li>
+      <li><a href="file:///C:/Users/STUDENT%20USER/Desktop/Carine%20L.%20Rivas%20BSIS%202B/rivas.html#contact">✉ Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- =========================
+       HOME / HERO
+  ========================== -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <div class="tag">
+        🌿 Aspiring Web Developer
+      </div>
+
+      <h1>
+        Hi, I'm <br>
+        <span>CarineMachaLatte.</span>
+      </h1>
+
+      <p>
+        I am an aspiring web developer passionate about creating
+        beautiful, functional, and meaningful digital experiences.
+        Like crafting the perfect latte, I believe every website
+        should have the right blend of creativity, design, and technology.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="file:///C:/Users/STUDENT%20USER/Desktop/Carine%20L.%20Rivas%20BSIS%202B/rivas.html#projects" class="btn btn-primary">
+          Explore My Work
+        </a>
+
+        <a href="file:///C:/Users/STUDENT%20USER/Desktop/Carine%20L.%20Rivas%20BSIS%202B/rivas.html#contact" class="btn btn-secondary">
+          Let's Connect
+        </a>
+      </div>
+
+    </div>
+
+    <div class="coffee-circle"></div>
+
+  </section>
+
+
+  <!-- =========================
+       ABOUT
+  ========================== -->
+
+  <section id="about">
+
+    <h2 class="section-title">
+      About My Latte Journey ☕
+    </h2>
+
+    <p class="section-subtitle">
+      A little blend of who I am and what I create.
+    </p>
+
+    <div class="about-grid">
+
+      <div class="glass-card">
+
+        <h3>Who is CarineMachaLatte?</h3>
+
+        <br>
+
+        <p>
+          I am a passionate and motivated
+          <span class="about-highlight">
+            aspiring web developer
+          </span>
+          who enjoys learning new technologies and creating websites
+          that are visually attractive and easy to use.
+        </p>
+
+        <br>
+
+        <p>
+          My goal is to continuously grow as a developer and transform
+          creative ideas into real and functional digital experiences.
+        </p>
+
+      </div>
+
+
+      <div class="glass-card">
+
+        <h3>My Developer Philosophy 🌿</h3>
+
+        <br>
+
+        <p>
+          Just like making a good latte, developing a great website
+          requires the perfect balance of:
+        </p>
+
+        <br>
+
+        <p>
+          ☕ <b>Creativity</b> — making designs unique.
+          <br><br>
+
+          💻 <b>Technology</b> — building functional solutions.
+          <br><br>
+
+          🌿 <b>Growth</b> — continuously learning and improving.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SKILLS
+  ========================== -->
+
+  <section id="skills">
+
+    <h2 class="section-title">
+      My Brewed Skills 🛠
+    </h2>
+
+    <p class="section-subtitle">
+      Technologies and skills I'm learning and developing.
+    </p>
+
+    <div class="skills-grid">
+
+      <div class="skill">
+        <h3>HTML</h3>
+        <p>
+          Building structured and accessible web pages.
+        </p>
+      </div>
+
+      <div class="skill">
+        <h3>CSS</h3>
+        <p>
+          Designing responsive and visually attractive websites.
+        </p>
+      </div>
+
+      <div class="skill">
+        <h3>JavaScript</h3>
+        <p>
+          Learning how to create interactive web experiences.
+        </p>
+      </div>
+
+      <div class="skill">
+        <h3>Responsive Design</h3>
+        <p>
+          Creating websites that work on different devices.
+        </p>
+      </div>
+
+      <div class="skill">
+        <h3>UI Design</h3>
+        <p>
+          Designing simple, clean, and user-friendly interfaces.
+        </p>
+      </div>
+
+      <div class="skill">
+        <h3>Problem Solving</h3>
+        <p>
+          Finding creative solutions through technology.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PROJECTS
+  ========================== -->
+
+  <section id="projects">
+
+    <h2 class="section-title">
+      My Digital Brews 💻
+    </h2>
+
+    <p class="section-subtitle">
+      Projects and ideas I've created along my development journey.
+    </p>
+
+
+    <div class="projects-grid">
+
+
+      <div class="project-card">
+
+        <div class="project-image">
+          🌐
+        </div>
+
+        <div class="project-content">
+
+          <h3>Personal Portfolio</h3>
+
+          <p>
+            A modern portfolio website designed to showcase my skills,
+            projects, and personal development journey.
+          </p>
+
+          <a href="file:///C:/Users/STUDENT%20USER/Desktop/Carine%20L.%20Rivas%20BSIS%202B/rivas.html#" class="project-link">
+            View Project →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="project-card">
+
+        <div class="project-image">
+          ☕
+        </div>
+
+        <div class="project-content">
+
+          <h3>Latte Inspired Website</h3>
+
+          <p>
+            A creative website concept inspired by coffee,
+            modern aesthetics, and clean user experiences.
+          </p>
+
+          <a href="file:///C:/Users/STUDENT%20USER/Desktop/Carine%20L.%20Rivas%20BSIS%202B/rivas.html#" class="project-link">
+            View Project →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="project-card">
+
+        <div class="project-image">
+          📱
+        </div>
+
+        <div class="project-content">
+
+          <h3>Responsive Web Design</h3>
+
+          <p>
+            A responsive website project designed to work smoothly
+            across desktop, tablet, and mobile devices.
+          </p>
+
+          <a href="file:///C:/Users/STUDENT%20USER/Desktop/Carine%20L.%20Rivas%20BSIS%202B/rivas.html#" class="project-link">
+            View Project →
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       JOURNEY
+  ========================== -->
+
+  <section id="journey">
+
+    <h2 class="section-title">
+      My Developer Journey 📖
+    </h2>
+
+    <p class="section-subtitle">
+      Every great developer starts with a single line of code.
+    </p>
+
+
+    <div class="journey">
+
+      <div class="journey-item">
+
+        <span>Beginning</span>
+
+        <h3>
+          Started Learning Web Development
+        </h3>
+
+        <p>
+          Began exploring the world of HTML, CSS,
+          and modern website design.
+        </p>
+
+      </div>
+
+
+      <div class="journey-item">
+
+        <span>Growing</span>
+
+        <h3>
+          Developing My Skills
+        </h3>
+
+        <p>
+          Continuing to improve my knowledge and build
+          creative web projects.
+        </p>
+
+      </div>
+
+
+      <div class="journey-item">
+
+        <span>Future</span>
+
+        <h3>
+          Becoming a Professional Developer
+        </h3>
+
+        <p>
+          My goal is to become a skilled web developer
+          and create meaningful digital experiences.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================== -->
+
+  <section id="contact">
+
+    <div class="contact-box">
+
+      <h2 class="section-title">
+        Let's Create Something Amazing ☕
+      </h2>
+
+      <p>
+        I'm always excited to learn, collaborate, and explore
+        new opportunities in web development.
+      </p>
+
+      <!-- Replace # with your actual email or social media link -->
+
+      <a href="mailto:your-email@example.com" class="btn btn-primary">
+
+        Contact CarineMachaLatte
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    © 2026 CarineMachaLatte.
+    Crafted with ☕, 🌿, and code.
+
+  </footer>
+
+
+  <!-- =========================
+       SIMPLE JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    // Navigation active effect
+
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+
+    window.addEventListener("scroll", () => {
+
+      let current = "";
+
+      sections.forEach(section => {
+
+        const sectionTop = section.offsetTop;
+
+        if (
+          window.scrollY >= sectionTop - 200
+        ) {
+
+          current = section.getAttribute("id");
+
+        }
+
+      });
+
+
+      navLinks.forEach(link => {
+
+        link.style.background = "";
+
+        if (
+          link.getAttribute("href") === "#" + current
+        ) {
+
+          link.style.background =
+            "rgba(92, 155, 118, 0.35)";
+
+        }
+
+      });
+
+    });
+
+  </script>
+
+
+</body></html>
